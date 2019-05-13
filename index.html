@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<head>
+	<meta charset='UTF-8'>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>THis is LAtex</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+	<script src="./js/script.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body >
+	<div class ="container" id="toolbox">
+		<button type="button" class="btn btn-primary" onclick="addChapter()" id="chapter">Add Chapter</button>
+		<button type="button" class="btn btn-primary" onclick="addSection()" id="section">Add Section</button>
+		<button type="button" class="btn btn-primary" onClick="addSubSection()" id="subsection">Add subsection</button>
+	</div>
+	<div class="container" id="view">
+		<div class="section" id="section">
+			<label>Section</label> <br />
+			<input type="text" name="title"/><br />
+			<textarea name="text"></textarea>
+		</div>
+		<div class="subsection">
+			<label>Subsection</label><br />
+			<input type="text" name="subsection"/><br />
+			<textarea name="text"></textarea>
+		</div>
+		<button type="button" class="btn btn-danger" value="submit" id="submit">Submit</button>
+	</div>
+	<div id="pdf">
+	</div>
+</body>
+</html>
