@@ -10,17 +10,24 @@
 </head>
 <body >
 	<div class ="container" id="toolbox">
-		<button type="button" class="btn btn-primary" onclick="addChapter()" id="chapter">Add Chapter</button>
-		<button type="button" class="btn btn-primary" onclick="addSection()" id="section">Add Section</button>
-		<button type="button" class="btn btn-primary" onClick="addSubSection()" id="subsection">Add subsection</button>
+		<button type="button" class="btn btn-primary" onclick="addChapter()" id="btn-chapter">Add Chapter</button>
+		<button type="button" class="btn btn-primary" onclick="addSection()" id="btn-section">Add Section</button>
+		<button type="button" class="btn btn-primary" onClick="addSubSection()" id="btn-subsection">Add subsection</button>
 	</div>
 	<div class="container" id="view">
-		<div class="section" id="section">
+
+
+	<div class="section" id="section">
 			<label>Section</label> <br />
 			<input type="text" name="title"/><br />
 			<textarea name="text"></textarea>
 		</div>
-		<div class="subsection">
+		<div id="ref"></div>
+
+
+
+
+		<div class="subsection" id="subsection">
 			<label>Subsection</label><br />
 			<input type="text" name="subsection"/><br />
 			<textarea name="text"></textarea>
