@@ -1,6 +1,6 @@
 function addSection() {
   var sec = document.createElement("div");
-  sec.innerHTML="<label>Section</label>";
+  sec.innerHTML="<label>Section</label><br />"+"<input type='text'/>"+"<br /><textarea></textarea>";
   var ref = document.getElementById("ref");
   ref.appendChild(sec);
 
