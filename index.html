@@ -3,33 +3,62 @@
 <head>
 	<meta charset='UTF-8'>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>THis is LAtex</title>
+	<title>LaTeX Editor</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>-->
 	<script src="./js/script.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<script src="/sticky.js"></script>
+	<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="title.css" />
+	<link rel="stylesheet" href="toolbox.css" />
+	<link rel="stylesheet" href="text.css" />
 </head>
+<style type="text/css"></style>
 
 <body>
+	
 	<div class="container" id="toolbox">
-		<button type="button" class="btn btn-primary" onclick="addChapter()" id="btn-chapter">Add Chapter</button>
-		<button type="button" class="btn btn-primary" onclick="addSection()" id="btn-section">Add Section</button>
-		<button type="button" class="btn btn-primary" onClick="createTextArea()" id="btn-subsection">Add
-			Paragraph</button>
-			<button type="button" class="btn btn-danger" onclick="ondelete()" id="delete">Delete Last Node</button>
+		
+
+		<div id="toolboxkit">
+				<div id="title">
+			
+						<h1>LaTeX Web System For Document Preparation</h1>
+					
+		
+				</div>
+			<nav class="navbar navbar-expand-xl bg-dark navbar-dark fixed-top">
+				<div class="btn-group btn-group-lg.navbar-nav-expand-xl">
+					<button type="button" class="btn btn-primary" onclick="addChapter()" id="btn-chapter">Add
+						Chapter</button>
+					<button type="button" class="btn btn-primary" onclick="addSection()" id="btn-section">Add
+						Section</button>
+					<button type="button" class="btn btn-primary" onClick="createTextArea()" id="btn-subsection">Add
+						Paragraph</button>
+					<button type="button" class="btn btn-danger" onclick="ondelete()" id="delete">Delete Last
+						Node</button>
+				</div>
+			</nav>
+		</div>
 	</div>
-	<div class="container" id="view">
+
+	<div class="container" id="content">
 		<form method="POST" action="pdf.php">
 			<div class="chapter" id="view">
-				<label>Chapter</label> <br />
-				<input type="text" name="chapter[]" placeholder="Chapter Name" /> <br />
-				<input type="text" name="section-title[]" placeholder="Side Heading" /><br />
-				<textarea name=text[]" placeholder="Text"></textarea>
-				<div id="ref"></div>
+				<div class="form-group">
+					<label>Chapter</label> <br />
+					<input type="text" name="chapter[]" class="form-control form-control-lg"
+						placeholder="Chapter Name" /> <br />
+					<input type="text" name="section-title[]" class="form-control form-control-lg"
+						placeholder="Side Heading" /><br />
+					<textarea name="text[]" class="form-control form-control-lg" rows="4" placeholder="Text"></textarea>
+					<div id="ref"></div>
+				</div>
+				<input type="submit" value="submit" class="btn btn-success" id="submit" />
 			</div>
-			<input type="submit" value="submit" class="btn btn-danger" id="submit" />
-	</div>
-	</form>
+		</form>
 	</div>
 	<div id="pdf">
 	</div>

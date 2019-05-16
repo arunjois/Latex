@@ -1,0 +1,14 @@
+#content{
+    width:90%; 
+    position: relative;
+    top:100pt;
+    font-size: 15pt;
+    margin-top: -5px;
+    z-index: -1;
+    /* overflow: hidden; */
+    }
+.form-control{
+    border:1px solid black;
+    width: 60%;
+    
+}

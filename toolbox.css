@@ -1,0 +1,45 @@
+.navbar{
+    width:100%;
+    position: fixed;
+    top:60px;
+    float:left;
+    left:0;
+    height:-18%;
+    overflow: hidden;
+    
+     } 
+  
+  
+    .btn {
+         
+      border: none; 
+      color: white; 
+      padding: 10px 12px; 
+      font-size: 16px; 
+      cursor: pointer; 
+      display:block;
+      font-family:Georgia, 'Times New Roman', Times, serif;
+      font-style: inherit;
+            border:1px solid  black;
+        }
+    
+    
+    .btn:hover {
+      background-color: RoyalBlue;
+    }
+    
+    .btn-group{
+      /* float:left; */
+      left:100pt;
+      width:80%;
+      align-content: center;
+        }
+
+    .sticky {
+            position: fixed;
+            top: 0;
+            width: 100%;
+          }
+    .sticky + .content {
+            padding-top: 60px;
+          }
