@@ -16,6 +16,7 @@ $section = $_POST["section-title"];
 foreach ($section as $sec) {
 	echo $sec." ";
 }
+echo count($_POST["section-title"]);
 
 
  ?>
