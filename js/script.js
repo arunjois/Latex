@@ -1,9 +1,10 @@
 function addSection() {
   var sec = document.createElement("div");
-  sec.innerHTML="<label>Section</label><br />"+"<input type='text'/>"+"<br /><textarea></textarea>";
+  var str = "<label>Section</label><br />"+"<input type='text' name='section-title[]' placeholder='side heading'/>"+
+  "<br /><textarea name='text[]' placeholder='text'></textarea>";
+  sec.innerHTML=str;
   var ref = document.getElementById("ref");
   ref.appendChild(sec);
-
 }
 function createTextArea() {
   var div = document.createElement("textarea");

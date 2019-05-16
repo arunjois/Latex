@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <head>
 	<meta charset='UTF-8'>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,37 +9,29 @@
 	<script src="./js/script.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
-<body >
-	<div class ="container" id="toolbox">
+
+<body>
+	<div class="container" id="toolbox">
 		<button type="button" class="btn btn-primary" onclick="addChapter()" id="btn-chapter">Add Chapter</button>
 		<button type="button" class="btn btn-primary" onclick="addSection()" id="btn-section">Add Section</button>
-		<button type="button" class="btn btn-primary" onClick="addSubSection()" id="btn-subsection">Add subsection</button>
+		<button type="button" class="btn btn-primary" onClick="addSubSection()" id="btn-subsection">Add
+			subsection</button>
 	</div>
 	<div class="container" id="view">
-
-		<div class="section" id="section">
-			<form method="POST" action="index.php">
+		<div class="chapter" id="view">
+			<form method="POST" action="pdf.php">
 				<label>Section</label> <br />
-				<input type="text" name="section-title-1"/><br />
-				<textarea name="section-text-1" id="section-text-1"></textarea>
-				<!--<input type="submit" value="submit" class="btn btn-danger" id="submit"/>-->
-			</div>
-			<div id="ref"></div>
-
-
-
-
-			<div class="subsection" id="subsection">
-				<label>Subsection</label><br />
-				<input type="text" name="subsection"/><br />
-				<textarea name="text" id="text"></textarea>
-				<input type="submit" value="submit" class="btn btn-danger" id="submit"/>
-
-			</div>
-
-		</form>
+				<input type="text" name="chapter[]" placeholder="Chapter Name" /> <br />
+				<input type="text" name="section-title[]" placeholder="Side Heading" /><br />
+				<textarea name=text-1" id="text[]" placeholder="Text"></textarea>
+				<div id="ref"></div>
+		</div>
+		<input type="submit" value="submit" class="btn btn-danger" id="submit" />
+	</div>
+	</form>
 	</div>
 	<div id="pdf">
 	</div>
 </body>
+
 </html>
