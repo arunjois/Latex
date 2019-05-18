@@ -6,6 +6,7 @@ function addSection() {
   sec.innerHTML=str;
   var ref = document.getElementById("ref");
   ref.appendChild(sec);
+  labelUpdate("section");
 }
 function createTextArea() {
   var sec = document.createElement("div");
@@ -14,8 +15,7 @@ function createTextArea() {
   sec.innerHTML=str;
   var ref = document.getElementById("ref");
   ref.appendChild(sec); 
-}
-function createLabel() {
+  labelUpdate("text");
 }
 function addChapter() {
   var sec = document.createElement("div");
@@ -27,8 +27,35 @@ function addChapter() {
   sec.innerHTML=str;
   var ref = document.getElementById("ref");
   ref.appendChild(sec);
+  labelUpdate("chapter");
 }
 function ondelete() { 
   var ref = document.getElementById("ref");
   ref.removeChild(ref.lastChild);
+}
+function labelUpdate(args) {
+  /*var section=1;
+  var chapter=1;
+  var text=1;
+  var ref = document.getElementById("ref");
+  for(var i=0;i<ref.childElementCount;i++)
+  {
+    console.log(ref.children[i].className);
+    switch(ref.children[i].className) {
+      case 'section':
+      section++;
+      break;
+      case 'chapter':
+      chapter++;
+      break;
+    }
+  }
+  console.log(section);
+  console.log(chapter);*/
+  var doctree = document.getElementById("tree");
+  var item = document.createElement("li");
+  item.setAttribute("id","list");
+  item.setAttribute("name","list");
+  item.innerText=args;
+  doctree.appendChild(item);
 }

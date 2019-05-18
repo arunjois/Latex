@@ -1,7 +1,8 @@
 <?php
-/*$section_title = (htmlspecialchars($_POST["section-title-1"]));
-$section_text = (htmlspecialchars($_POST["section-text-1"]));
-
+//$section_title = (htmlspecialchars($_POST["chapter"][0]));
+//$section_text = (htmlspecialchars($_POST["section-title"][0]));
+$section_text="this is chaptert";
+$section_title="This is text";
 $myfile = fopen("test.tex", "w") ;
 $document_template = "\\documentclass{article}
                       \\begin{document}";
@@ -11,16 +12,36 @@ $text = $section_text;
 $end ="\\end{document}";
 fwrite($myfile,$document_template.$title.$subsection_title.$text.$end);
 fclose($myfile);
-shell_exec("pdflatex test.tex");*/
-$section = $_POST["section-title"];
+shell_exec("pdflatex test.tex");
+/*$section = $_POST["section-title"];
 foreach ($section as $sec) {
 	echo $sec." ";
 }
-echo count($_POST["section-title"]);
+echo "Chapter<br />";
+$chapter = $_POST["chapter"];
+foreach ($chapter as $chap) {
+	echo $chap." ";
+}
+echo "text<br />";
+$text = $_POST["text"];
+foreach($text as $t){
+	echo $t." ";
+}
 
+/*echo count($_POST["section-title"]);
+$dom = new DOMDocument();
+$dom->preserveWhiteSpace = false;
+$dom->formatOutput       = true;
+$dom->loadHTML('index.html');
+$result = $dom->childNodes;
+foreach($result as $node) {
+	//print_r($node);
+}
+var_dump($_POST);
+*/
 
  ?>
- <!--<!DOCTYPE html>
+ <!DOCTYPE html>
  <head>
  	<meta charset='UTF-8'>
  	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -35,4 +56,4 @@ echo count($_POST["section-title"]);
      <embed src="test.pdf" width="600px" height="800px" />
    </div>
  </body>
- <html>-->
+ <html>
