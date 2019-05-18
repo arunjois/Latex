@@ -1,9 +1,48 @@
 <?php
-//$section_title = (htmlspecialchars($_POST["chapter"][0]));
-//$section_text = (htmlspecialchars($_POST["section-title"][0]));
-$section_text="this is chaptert";
-$section_title="This is text";
-$myfile = fopen("test.tex", "w") ;
+//$myfile = fopen("test.tex", "w") ;
+$document_template = "\\documentclass{article}
+                      \\begin{document}";
+$section = $_POST["section"];
+foreach ($section as $sec) {
+	echo $sec." ";
+}
+$chapter = $_POST["chapter"][0];
+echo $chapter;
+$tmp = $_POST["document"];
+$array = explode(',',$tmp);
+
+$section_count=0;
+$chapter_count=0;
+$text_count=0;
+
+foreach($array as $t){
+	switch ($t) {
+		case 'C':$chapter = $_POST["chapter"][$chapter_count++];
+				$title = "\\section{".$chapter."}";
+
+
+			
+		break;
+		
+		case 'S': $section = $_POST["section"][$section_count++];
+		$subsection_title = "\\subsection{".$section."}";
+
+		break;
+		case 'T': $text = $_POST["text"][$text_count++];
+		
+
+
+		break;
+	}
+	echo $chapter."<br />";
+echo $section."<br />";
+echo $text."<br />";
+}
+
+
+
+
+/*$myfile = fopen("test.tex", "w") ;
 $document_template = "\\documentclass{article}
                       \\begin{document}";
 $title = "\\section{".$section_title."}";
@@ -13,34 +52,14 @@ $end ="\\end{document}";
 fwrite($myfile,$document_template.$title.$subsection_title.$text.$end);
 fclose($myfile);
 shell_exec("pdflatex test.tex");
-/*$section = $_POST["section-title"];
-foreach ($section as $sec) {
-	echo $sec." ";
-}
-echo "Chapter<br />";
-$chapter = $_POST["chapter"];
-foreach ($chapter as $chap) {
-	echo $chap." ";
-}
-echo "text<br />";
-$text = $_POST["text"];
-foreach($text as $t){
-	echo $t." ";
-}
-
-/*echo count($_POST["section-title"]);
-$dom = new DOMDocument();
-$dom->preserveWhiteSpace = false;
-$dom->formatOutput       = true;
-$dom->loadHTML('index.html');
-$result = $dom->childNodes;
-foreach($result as $node) {
-	//print_r($node);
-}
-var_dump($_POST);
 */
 
+
+
+
+
  ?>
+ <!--
  <!DOCTYPE html>
  <head>
  	<meta charset='UTF-8'>
@@ -57,3 +76,4 @@ var_dump($_POST);
    </div>
  </body>
  <html>
+-->

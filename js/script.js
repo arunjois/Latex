@@ -34,28 +34,25 @@ function ondelete() {
   ref.removeChild(ref.lastChild);
 }
 function labelUpdate(args) {
-  /*var section=1;
-  var chapter=1;
-  var text=1;
-  var ref = document.getElementById("ref");
-  for(var i=0;i<ref.childElementCount;i++)
+  var section = document.getElementById("section-count");
+  var value = document.getElementById("section-count").value;
+  /*count++;
+  section.setAttribute("value",count);
+  console.log(count);*/
+  switch(args) 
   {
-    console.log(ref.children[i].className);
-    switch(ref.children[i].className) {
-      case 'section':
-      section++;
-      break;
-      case 'chapter':
-      chapter++;
-      break;
-    }
+    case "text":value=value+",T";
+                console.log(value);
+                section.setAttribute("value",value);
+    break;
+    case "chapter":value=value+",C";
+                console.log(value);
+                section.setAttribute("value",value);
+
+    break;
+    case "section":value=value+",S";
+                console.log(value);
+                section.setAttribute("value",value);
+    break;
   }
-  console.log(section);
-  console.log(chapter);*/
-  var doctree = document.getElementById("tree");
-  var item = document.createElement("li");
-  item.setAttribute("id","list");
-  item.setAttribute("name","list");
-  item.innerText=args;
-  doctree.appendChild(item);
 }
