@@ -42,15 +42,15 @@
 				<div class="form-group">
 					<label>Chapter</label> <br />
 					<input type="text" name="chapter[]" class="form-control form-control-lg"
-						placeholder="Chapter Name" /> <br />
+						placeholder="Chapter Name" autocomplete="off" /> <br />
 					<input type="text" name="section[]" class="form-control form-control-lg"
-						placeholder="Side Heading" /><br />
-					<textarea name="text[]" class="form-control form-control-lg" rows="4" placeholder="Text"></textarea>
+						placeholder="Side Heading" autocomplete="off"/><br />
+					<textarea name="text[]" class="form-control form-control-lg" autocomplete="off" rows="4" placeholder="Text"></textarea>
 					<div id="ref"></div>
 				</div>
 				<div id="tree"></div>
 				<div id="count"> 
-					<input type="text" name="document" id="section-count" value="C"/><br />
+					<input type="text" name="document" id="section-count" value="C,S,T"/><br />
 				</div>
 				<input type="submit" value="submit" class="btn btn-success" id="submit" />
 			</div>

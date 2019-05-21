@@ -45,12 +45,12 @@ function labelUpdate(args) {
                 console.log(value);
                 section.setAttribute("value",value);
     break;
-    case "chapter":value=value+",C";
+    case "chapter":value=value+",C,S,T";
                 console.log(value);
                 section.setAttribute("value",value);
 
     break;
-    case "section":value=value+",S";
+    case "section":value=value+",S,T";
                 console.log(value);
                 section.setAttribute("value",value);
     break;
