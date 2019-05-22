@@ -7,7 +7,7 @@ $document_template = "\\documentclass{article}
                       \\begin{document}";
 $tmp = $_POST["document"];
 $array = explode(',',$tmp);
-var_dump($array);
+//var_dump($array);
 $section_count=-1;
 $chapter_count=-1;
 $text_count=-1;
@@ -22,18 +22,18 @@ foreach($array as $t){
 		case 'C':$chapter_count++;
 		$chapter = $_POST["chapter"][$chapter_count];
 				$title = $title."\\section{".$chapter."}";
-				echo $title."\n";
+				//echo $title."\n";
 				fwrite($myfile,$title);
 		break;
 		case 'S': $section_count++;
 		$section = $_POST["section"][$section_count];
 		$subsection_title = $subsection_title. "\\subsection{".$section."}";
-		echo $subsection_title."\n";
+		//echo $subsection_title."\n";
 		fwrite($myfile,$subsection_title);
 		break;
 		case 'T': $text_count++;
 		$text = $text. $_POST["text"][$text_count];
-		echo $text."\n";
+		//echo $text."\n";
 		fwrite($myfile,$text);
 		break;
 		
@@ -45,7 +45,7 @@ $text="";
 fwrite($myfile,$end);
 fclose($myfile);
 $string="/usr/bin/pdflatex test.tex";
-$what = exec($string);
+exec($string);
 
 
 
