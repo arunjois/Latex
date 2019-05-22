@@ -13,6 +13,9 @@ $chapter_count=0;
 $text_count=0;
 $end ="\\end{document}";
 $content = "";
+$title = "";
+$subsection_title ="";
+$text="";
 foreach($array as $t){
 	switch ($t) {
 		case 'C':$chapter = $_POST["chapter"][$chapter_count++];
@@ -21,16 +24,16 @@ foreach($array as $t){
 		break;
 		case 'S': $section = $_POST["section"][$section_count++];
 		$subsection_title = "\\subsection{".$section."}";
-		echo $subsection_title."\n";
+		//echo $subsection_title."\n";
 		break;
 		case 'T': $text = $_POST["text"][$text_count++];
 		//echo $text."\n";
 		break;
 		
 	}
-	
+	$content = $content.$title.$subsection_title.$text;
 }
-$content = $content.$title.$subsection_title.$text;
+
 fwrite($myfile,$document_template.$content.$end);
 fclose($myfile);
 $string="/usr/bin/pdflatex test.tex";
