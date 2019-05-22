@@ -8,33 +8,41 @@ $document_template = "\\documentclass{article}
 $tmp = $_POST["document"];
 $array = explode(',',$tmp);
 var_dump($array);
-$section_count=0;
-$chapter_count=0;
-$text_count=0;
+$section_count=-1;
+$chapter_count=-1;
+$text_count=-1;
 $end ="\\end{document}";
 $content = "";
 $title = "";
 $subsection_title ="";
 $text="";
+fwrite($myfile,$document_template);
 foreach($array as $t){
 	switch ($t) {
-		case 'C':$chapter = $_POST["chapter"][$chapter_count++];
-				$title = "\\section{".$chapter."}";
-				//echo $title."\n";
+		case 'C':$chapter_count++;
+		$chapter = $_POST["chapter"][$chapter_count];
+				$title = $title."\\section{".$chapter."}";
+				echo $title."\n";
+				fwrite($myfile,$title);
 		break;
-		case 'S': $section = $_POST["section"][$section_count++];
-		$subsection_title = "\\subsection{".$section."}";
-		//echo $subsection_title."\n";
+		case 'S': $section_count++;
+		$section = $_POST["section"][$section_count];
+		$subsection_title = $subsection_title. "\\subsection{".$section."}";
+		echo $subsection_title."\n";
+		fwrite($myfile,$subsection_title);
 		break;
-		case 'T': $text = $_POST["text"][$text_count++];
-		//echo $text."\n";
+		case 'T': $text_count++;
+		$text = $text. $_POST["text"][$text_count];
+		echo $text."\n";
+		fwrite($myfile,$text);
 		break;
 		
 	}
-	$content = $content.$title.$subsection_title.$text;
+	$title = "";
+$subsection_title ="";
+$text="";
 }
-
-fwrite($myfile,$document_template.$content.$end);
+fwrite($myfile,$end);
 fclose($myfile);
 $string="/usr/bin/pdflatex test.tex";
 $what = exec($string);
