@@ -39,17 +39,14 @@ function ondelete() {
   switch(choice) {
     case "chapter":
       var newvalue = value.slice(-5);
-      console.log("new Value"+newvalue);
       section.setAttribute("value",newvalue);
       break;
     case "section":
       var newvalue = value.slice(0,-4);
-      console.log("new Value"+newvalue);
       section.setAttribute("value",newvalue);
       break;
     case "text":
       var newvalue = value.slice(0,-2);
-      console.log("new Value"+newvalue);
       section.setAttribute("value",newvalue);
       break;
         
