@@ -31,7 +31,19 @@ function addChapter() {
 }
 function ondelete() { 
   var ref = document.getElementById("ref");
+  console.log(ref.lastChild);
+  var choice = (ref.lastChild.getAttribute("class"));
   ref.removeChild(ref.lastChild);
+  switch(choice) {
+    case "chapter":
+      var section = document.getElementById("section-count");
+      var value = section.value;
+      var newvalue = value.slice(-5);
+      console.log("new Value"+newvalue);
+      section.setAttribute("value",newvalue);
+
+        
+  }
 }
 function labelUpdate(args) {
   var section = document.getElementById("section-count");
@@ -39,7 +51,7 @@ function labelUpdate(args) {
   /*count++;
   section.setAttribute("value",count);
   console.log(count);*/
-  switch(args) 
+  switch(args)
   {
     case "text":value=value+",T";
                 console.log(value);

@@ -36,7 +36,7 @@ $content = $content.$title.$subsection_title.$text;
 fwrite($myfile,$document_template.$content.$end);
 fclose($myfile);
 $file="test.tex";
-$string = exec('/usr/bin/pdflatex test.tex' );
+$string = exec('bash pdf.sh' );
 if(is_null($string))
 	echo "NULL";
 else 
