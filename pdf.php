@@ -34,7 +34,7 @@ foreach($array as $t){
 		case 'T': $text_count++;
 		$text = $text. $_POST["text"][$text_count];
 		//echo $text."\n";
-		fwrite($myfile,$text);
+		fwrite($myfile,$text."\n\n");
 		break;
 		
 	}
