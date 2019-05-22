@@ -7,7 +7,7 @@ $document_template = "\\documentclass{article}
                       \\begin{document}";
 $tmp = $_POST["document"];
 $array = explode(',',$tmp);
-
+var_dump($array);
 $section_count=0;
 $chapter_count=0;
 $text_count=0;
@@ -21,7 +21,7 @@ foreach($array as $t){
 		break;
 		case 'S': $section = $_POST["section"][$section_count++];
 		$subsection_title = "\\subsection{".$section."}";
-		//echo $subsection_title."\n";
+		echo $subsection_title."\n";
 		break;
 		case 'T': $text = $_POST["text"][$text_count++];
 		//echo $text."\n";
@@ -33,22 +33,8 @@ foreach($array as $t){
 $content = $content.$title.$subsection_title.$text;
 fwrite($myfile,$document_template.$content.$end);
 fclose($myfile);
-$file="test.tex";
-// $string =exec("export HOME='/opt/lampp/htdocs/Latex/';su /usr/bin/pdflatex /opt/lampp/htdocs/Latex/test.tex");
 $string="/usr/bin/pdflatex test.tex";
 $what = exec($string);
-/*$myfile = fopen("test.tex", "w") ;
-$document_template = "\\documentclass{article}
-                      \\begin{document}";
-$title = "\\section{".$section_title."}";
-$subsection_title = "\\subsection{".$section_text."}";
-$text = $section_text;
-$end ="\\end{document}";
-fwrite($myfile,$document_template.$title.$subsection_title.$text.$end);
-fclose($myfile);
-shell_exec("pdflatex test.tex");
-*/
-
 
 
 

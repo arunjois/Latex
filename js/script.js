@@ -1,7 +1,7 @@
 function addSection() {
   var sec = document.createElement("div");
   sec.setAttribute("class","section");
-  var str = "<label>Section</label><br />"+"<input type='text' class='form-control form-control-lg' name='section-title[]' placeholder='side heading'/>"+
+  var str = "<label>Section</label><br />"+"<input type='text' class='form-control form-control-lg' name='section[]' placeholder='side heading'/>"+
   "<br /><textarea name='text[]' placeholder='text' class='form-control form-control-lg' rows='4'></textarea>";
   sec.innerHTML=str;
   var ref = document.getElementById("ref");
@@ -22,7 +22,7 @@ function addChapter() {
   sec.setAttribute("class","chapter");
   var str = "<label>Chapter</label><br />"+
             "<input type='text' name='chapter[]' class='form-control form-control-lg' placeholder='Chapter Name' /> <br />"+
-            "<input type='text' name='section-title[]' class='form-control form-control-lg' placeholder='side heading'/>"+
+            "<input type='text' name='section[]' class='form-control form-control-lg' placeholder='side heading'/>"+
             "<br /><textarea name='text[]' class='form-control form-control-lg' rows='4'  placeholder='text'></textarea>";
   sec.innerHTML=str;
   var ref = document.getElementById("ref");
